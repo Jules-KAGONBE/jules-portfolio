@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="title" content="Jules PATEHALE KAGONBE - Juriste d’affaires, Droit OHADA et Notarial" />
+  <meta name="description" content="Portfolio de Jules PATEHALE KAGONBE, juriste d’affaires spécialisé en droit notarial, OHADA, fusion-acquisition et projets de digitalisation juridique." />
+  <meta name="keywords" content="Jules Patéhélé Kagonbé, juriste d’affaires, droit notarial, droit OHADA, portfolio juridique, digitalisation juridique, droit des affaires, notaire, Afrique, Tchad" />
+  <meta name="author" content="Jules PATEHALE KAGONBE"/>
+  <title>Projets - Jules PATEHALE KAGONBE</title>
+
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+</head>
+<body>
+  <div class="page-container">
+    <!-- HEADER -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">Jules PATEHALE KAGONBE</div>
+        <ul class="nav-links">
+          <li><a href="index.html">ACCUEIL</a></li>
+          <li><a href="a-propos.html">A PROPOS</a></li>
+          <li><a href="competences.html">COMPETENCES</a></li>
+          <li><a href="projets.html" class="active">PROJETS</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="burger"><div></div><div></div><div></div></div>
+      </div>
+    </header>
+
+    <!-- BARRE D'INFO -->
+    <div class="highlight-box">
+    <span id="date-locale" class="date-locale">-- -- --</span>
+  
+    <div class="marquee-wrapper">
+    <span class="marquee-text">
+     Juriste d’affaires & expert droit notarial, je combine expertise juridique et innovation digitale pour faire évoluer vos projets avec agilité et sécurité. Transformons ensemble le droit grâce aux nouvelles technologies !
+    </span>
+    </div>
+  
+    <span id="heure-locale" class="heure-locale">--:--</span>
+    </div>
+
+    <!-- MAIN -->
+    <main class="projects-section" data-aos="fade-up">
+  <section>
+    <h2>Mes projets</h2>
+    <div class="project-grid">
+      <div class="project-box" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-globe-africa"></i>
+        <h3>Annuaire notarial digital</h3>
+        <p>Plateforme en ligne référençant les notaires du Tchad et d’Afrique francophone, avec géolocalisation, fiche contact, et options de prise de rendez-vous en ligne.</p>
+        <a href="projet-en-cours.html" class="cta-btn">Découvrir</a>
+      </div>
+      <div class="project-box" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-briefcase"></i>
+        <h3>Plateforme de suivi de dossiers</h3>
+        <p>Application web permettant aux études notariales de suivre en temps réel les dossiers clients, avec statuts, pièces jointes et rappels automatiques.</p>
+        <a href="projet-en-cours.html" class="cta-btn">Découvrir</a>
+      </div>
+      <div class="project-box" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fas fa-database"></i>
+        <h3>Digitalisation des archives notariales</h3>
+        <p>Projet de transformation des archives physiques en bases de données consultables et sécurisées, facilitant la recherche et la conservation à long terme.</p>
+        <a href="projet-en-cours.html" class="cta-btn">Découvrir</a>
+      </div>
+      <div class="project-box" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Module OHADA en ligne</h3>
+        <p>Outil pédagogique et juridique pour comprendre et appliquer les normes OHADA dans les actes courants, destiné aux praticiens et étudiants.</p>
+        <a href="projet-en-cours.html" class="cta-btn">Découvrir</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Jules PATEHALE KAGONBE - Tous droits réservés</p>
+    </footer>
+  </div>
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/23566247528" class="whatsapp-float" target="_blank" title="Discuter sur WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-text">Discutons !</span>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  });
+  </script>
+  <script>
+  function mettreAJourDateHeure() {
+  const maintenant = new Date();
+
+  const jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+  const mois = ["janvier", "février", "mars", "avril", "mai", "juin",
+                "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+  const jourSemaine = jours[maintenant.getDay()];
+  const jour = maintenant.getDate();
+  const moisNom = mois[maintenant.getMonth()];
+  const annee = maintenant.getFullYear();
+
+  const heures = maintenant.getHours().toString().padStart(2, '0');
+  const minutes = maintenant.getMinutes().toString().padStart(2, '0');
+
+  const dateTexte = `${jourSemaine} ${jour} ${moisNom} ${annee}`;
+  const heureTexte = `${heures}:${minutes}`;
+
+  document.getElementById('date-locale').textContent = dateTexte;
+  document.getElementById('heure-locale').textContent = heureTexte;
+}
+
+mettreAJourDateHeure();
+setInterval(mettreAJourDateHeure, 60000);
+
+</script>
+</body>
+</html>

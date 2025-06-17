@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="title" content="Jules PATEHALE KAGONBE - Juriste d’affaires, Droit OHADA et Notarial" />
+  <meta name="description" content="Portfolio de Jules PATEHALE KAGONBE, juriste d’affaires spécialisé en droit notarial, OHADA, fusion-acquisition et projets de digitalisation juridique." />
+  <meta name="keywords" content="Jules Patéhélé Kagonbé, juriste d’affaires, droit notarial, droit OHADA, portfolio juridique, digitalisation juridique, droit des affaires, notaire, Afrique, Tchad" />
+  <meta name="author" content="Jules PATEHALE KAGONBE"/>
+  <title>Contact - Jules PATEHALE KAGONBE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("HrBqCOKlRQHvgT_Qv");
+  })();
+</script>
+
+
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <div class="nav-container">
+        <div class="logo">Jules PATEHALE KAGONBE</div>
+        <ul class="nav-links">
+          <li><a href="index.html">ACCUEIL</a></li>
+          <li><a href="a-propos.html">A PROPOS</a></li>
+          <li><a href="competences.html">COMPETENCES</a></li>
+          <li><a href="projets.html">PROJETS</a></li>
+          <li><a href="contact.html" class="active">CONTACT</a></li>
+        </ul>
+        <div class="burger"><div></div><div></div><div></div></div>
+      </div>
+    </header>
+	
+	<div class="highlight-box">
+    <span id="date-locale" class="date-locale">-- -- --</span>
+  
+    <div class="marquee-wrapper">
+    <span class="marquee-text">
+     Juriste d’affaires & expert droit notarial, je combine expertise juridique et innovation digitale pour faire évoluer vos projets avec agilité et sécurité. Transformons ensemble le droit grâce aux nouvelles technologies !
+    </span>
+    </div>
+  
+    <span id="heure-locale" class="heure-locale">--:--</span>
+    </div>
+
+    <main class="contact-section">
+      <h2>Prendre rendez-vous</h2>
+      <p class="intro">Choisissez un mode de rendez-vous et remplissez le formulaire. Je vous recontacterai rapidement.</p>
+
+      <div class="appointment-options">
+        <div class="option">
+          <i class="fas fa-video"></i>
+          <h3>En ligne (visioconférence)</h3>
+          <p>Planifiez une rencontre professionnelle à distance, depuis chez vous.</p>
+          <a href="#formulaire" class="cta-btn">Prendre RDV en ligne</a>
+        </div>
+        <div class="option">
+          <i class="fas fa-building"></i>
+          <h3>En présentiel</h3>
+          <p>Rencontrons-nous à N'Djaména pour un échange direct et confidentiel.</p>
+          <a href="#formulaire" class="cta-btn">Prendre RDV en présentiel</a>
+        </div>
+      </div>
+
+      <form id="formulaire" class="contact-form" method="POST" action="#">
+          <h3>Formulaire de contact</h3>
+          <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+          <input type="text" name="nom" placeholder="Votre nom" required />
+          <input type="email" name="email" placeholder="Votre email" required />
+          <input type="tel" name="telephone" placeholder="Téléphone" />
+         <select name="type">
+         <option value="">Choisir le type de rendez-vous</option>
+         <option value="en ligne">Rendez-vous en ligne</option>
+         <option value="en presentiel">Rendez-vous en présentiel</option>
+       </select>
+       <textarea name="message" placeholder="Votre message / sujet du rendez-vous" rows="5"></textarea>
+       <button type="submit" class="cta-btn">Envoyer</button>
+       </form>
+
+    </main>
+
+    <footer>
+      <p>© 2025 Jules PATEHALE KAGONBE - Tous droits réservés</p>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  });
+  </script>
+  <script>
+  function mettreAJourDateHeure() {
+  const maintenant = new Date();
+
+  const jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+  const mois = ["janvier", "février", "mars", "avril", "mai", "juin",
+                "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+  const jourSemaine = jours[maintenant.getDay()];
+  const jour = maintenant.getDate();
+  const moisNom = mois[maintenant.getMonth()];
+  const annee = maintenant.getFullYear();
+
+  const heures = maintenant.getHours().toString().padStart(2, '0');
+  const minutes = maintenant.getMinutes().toString().padStart(2, '0');
+
+  const dateTexte = `${jourSemaine} ${jour} ${moisNom} ${annee}`;
+  const heureTexte = `${heures}:${minutes}`;
+
+  document.getElementById('date-locale').textContent = dateTexte;
+  document.getElementById('heure-locale').textContent = heureTexte;
+}
+
+mettreAJourDateHeure();
+setInterval(mettreAJourDateHeure, 60000);
+
+</script>
+  <script>
+document.getElementById("formulaire").addEventListener("submit", function(e) {
+  e.preventDefault(); // Empêche l'envoi classique
+
+  // Anti-spam (champ caché type honeypot)
+  const honeypot = this.querySelector('input[name="website"]');
+  if (honeypot.value.trim() !== "") {
+    alert("Formulaire détecté comme spam.");
+    return;
+  }
+
+  // Récupération des données du formulaire
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  // Affiche les données dans la console (pour test)
+  console.log("Données du formulaire :", data);
+
+  // Message de confirmation
+  alert("Merci " + data.nom + ", votre message a été envoyé avec succès !");
+
+  // Réinitialise le formulaire
+  this.reset();
+});
+</script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("HrBqCOKlRQHvgT_Qv");
+  })();
+
+  document.getElementById('formulaire').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_gl4mqmu', 'template_pp1wz9s', this)
+      .then(function() {
+        alert('Message envoyé avec succès !');
+      }, function(error) {
+        alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
+      });
+  });
+</script>
+
+</body>
+</html>

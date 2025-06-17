@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="title" content="Jules PATEHALE KAGONBE - Juriste d’affaires, Droit OHADA et Notarial" />
+  <meta name="description" content="Portfolio de Jules PATEHALE KAGONBE, juriste d’affaires spécialisé en droit notarial, OHADA, fusion-acquisition et projets de digitalisation juridique." />
+  <meta name="keywords" content="Jules Patéhélé Kagonbé, juriste d’affaires, droit notarial, droit OHADA, portfolio juridique, digitalisation juridique, droit des affaires, notaire, Afrique, Tchad" />
+  <meta name="author" content="Jules PATEHALE KAGONBE"/>
+  <title>Accueil - Jules PATEHALE KAGONBE</title>
+
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+</head>
+<body>
+  <div class="page-container">
+    <!-- HEADER -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">Jules PATEHALE KAGONBE</div>
+        <ul class="nav-links">
+          <li><a href="index.html">ACCUEIL</a></li>
+          <li><a href="a-propos.html">A PROPOS</a></li>
+          <li><a href="competences.html" class="active">COMPETENCES</a></li>
+          <li><a href="projets.html">PROJETS</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="burger"><div></div><div></div><div></div></div>
+      </div>
+    </header>
+
+    <div class="highlight-box">
+    <span id="date-locale" class="date-locale">-- -- --</span>
+  
+    <div class="marquee-wrapper">
+    <span class="marquee-text">
+     Juriste d’affaires & expert droit notarial, je combine expertise juridique et innovation digitale pour faire évoluer vos projets avec agilité et sécurité. Transformons ensemble le droit grâce aux nouvelles technologies !
+    </span>
+    </div>
+  
+    <span id="heure-locale" class="heure-locale">--:--</span>
+    </div>
+
+    <!-- MAIN -->
+    <main class="hero-section" data-aos="fade-up">
+  <section class="skills-section" data-aos="fade-up">
+    <h2>Mes Compétences</h2>
+    <div class="skills-grid">
+      <div class="skill-box" data-aos="fade-right" data-aos-delay="200">
+        <i class="fas fa-scale-balanced"></i>
+        <h3>Droit notarial & OHADA</h3>
+        <p>Rédaction d'actes, droit des sociétés, formalités juridiques complexes.</p>
+      </div>
+
+      <div class="skill-box" data-aos="fade-right" data-aos-delay="400">
+        <i class="fas fa-handshake"></i>
+        <h3>Mergers & Acquisitions</h3>
+        <p>Conseil en structuration, négociation et exécution de fusions-acquisitions.</p>
+      </div>
+
+      <div class="skill-box" data-aos="fade-left" data-aos-delay="600">
+        <i class="fas fa-code"></i>
+        <h3>HTML & CSS</h3>
+        <p>Création d’interfaces modernes, responsive et adaptées aux projets juridiques.</p>
+      </div>
+
+      <div class="skill-box" data-aos="fade-left" data-aos-delay="800">
+        <i class="fab fa-js-square"></i>
+        <h3>JavaScript</h3>
+        <p>Ajout de fonctionnalités interactives à vos projets web orientés droit et innovation.</p>
+      </div>
+
+      <div class="skill-box" data-aos="fade-left" data-aos-delay="1000">
+        <i class="fas fa-university"></i>
+        <h3>Consultance & Avis juridiques</h3>
+        <p>Analyse de cadres réglementaires, réforme du climat des affaires.</p>
+      </div>
+
+      <div class="skill-box" data-aos="fade-left" data-aos-delay="1200">
+        <i class="fas fa-language"></i>
+        <h3>Français & Anglais</h3>
+        <p>Communication juridique et professionnelle bilingue.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Jules PATEHALE KAGONBE - Tous droits réservés</p>
+    </footer>
+  </div>
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/23566247528" class="whatsapp-float" target="_blank" title="Discuter sur WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-text">Discutons !</span>
+  </a>
+  
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  });
+  </script>
+  <script>
+  function mettreAJourDateHeure() {
+  const maintenant = new Date();
+
+  const jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+  const mois = ["janvier", "février", "mars", "avril", "mai", "juin",
+                "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+  const jourSemaine = jours[maintenant.getDay()];
+  const jour = maintenant.getDate();
+  const moisNom = mois[maintenant.getMonth()];
+  const annee = maintenant.getFullYear();
+
+  const heures = maintenant.getHours().toString().padStart(2, '0');
+  const minutes = maintenant.getMinutes().toString().padStart(2, '0');
+
+  const dateTexte = `${jourSemaine} ${jour} ${moisNom} ${annee}`;
+  const heureTexte = `${heures}:${minutes}`;
+
+  document.getElementById('date-locale').textContent = dateTexte;
+  document.getElementById('heure-locale').textContent = heureTexte;
+  }
+
+  mettreAJourDateHeure();
+  setInterval(mettreAJourDateHeure, 60000);
+
+</script>
+</body>
+</html>

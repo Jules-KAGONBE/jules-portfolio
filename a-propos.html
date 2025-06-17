@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="title" content="Jules PATEHALE KAGONBE - Juriste d’affaires, Droit OHADA et Notarial" />
+  <meta name="description" content="Portfolio de Jules PATEHALE KAGONBE, juriste d’affaires spécialisé en droit notarial, OHADA, fusion-acquisition et projets de digitalisation juridique." />
+  <meta name="keywords" content="Jules Patéhélé Kagonbé, juriste d’affaires, droit notarial, droit OHADA, portfolio juridique, digitalisation juridique, droit des affaires, notaire, Afrique, Tchad" />
+  <meta name="author" content="Jules PATEHALE KAGONBE"/>
+  <title>À propos - Jules PATEHALE KAGONBE</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">Jules PATEHALE KAGONBE</div>
+        <ul class="nav-links">
+          <li><a href="index.html">ACCUEIL</a></li>
+          <li><a href="a-propos.html" class="active">A PROPOS</a></li>
+          <li><a href="competences.html">COMPETENCES</a></li>
+          <li><a href="projets.html">PROJETS</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="burger"><div></div><div></div><div></div></div>
+      </div>
+    </header>
+	
+	<div class="highlight-box">
+    <span id="date-locale" class="date-locale">-- -- --</span>
+  
+    <div class="marquee-wrapper">
+    <span class="marquee-text">
+     Juriste d’affaires & expert droit notarial, je combine expertise juridique et innovation digitale pour faire évoluer vos projets avec agilité et sécurité. Transformons ensemble le droit grâce aux nouvelles technologies !
+    </span>
+    </div>
+  
+    <span id="heure-locale" class="heure-locale">--:--</span>
+    </div>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="about-section">
+	  
+	  <section class="intro-section" data-aos="fade-up">
+        <h2>À propos de moi</h2>
+        <p class="intro-text">
+          Juriste d’affaires basé à N’Djaména, titulaire d’un Master en droit international notarial, je me spécialise dans l’accompagnement juridique des transitions numériques. Mon ambition : rendre les pratiques notariales et les services juridiques plus efficaces, accessibles et modernes grâce à la technologie.
+        </p>
+      </section>
+
+      <section class="timeline-section" data-aos="fade-up">
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+            <h3>2023 - à présent</h3>
+            <p>Expert-Contributeur dans le cadre du Projet Business Ready (B-Ready) de la Banque mondiale.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-up">
+            <h3>2022 - à présent</h3>
+            <p>Notaire assistant dans une Etude notariale à N'Djaména - TCHAD.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-up">
+            <h3>2020 - 2022</h3>
+            <p>Notaire stagiaire dans une Etude notariale à N'Djaména - TCHAD.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-up">
+            <h3>2016 - 2019</h3>
+            <p>Stagiaire dans un office notarial à Niamey - NIGER.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Jules PATEHALE KAGONBE - Tous droits réservés</p>
+    </footer>
+  </div>
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/23566247528" class="whatsapp-float" target="_blank" title="Discuter sur WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-text">Discutons !</span>
+  </a>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faders = document.querySelectorAll('.fade-up');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  });
+</script>
+<script>
+  function mettreAJourDateHeure() {
+  const maintenant = new Date();
+
+  const jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+  const mois = ["janvier", "février", "mars", "avril", "mai", "juin",
+                "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+  const jourSemaine = jours[maintenant.getDay()];
+  const jour = maintenant.getDate();
+  const moisNom = mois[maintenant.getMonth()];
+  const annee = maintenant.getFullYear();
+
+  const heures = maintenant.getHours().toString().padStart(2, '0');
+  const minutes = maintenant.getMinutes().toString().padStart(2, '0');
+
+  const dateTexte = `${jourSemaine} ${jour} ${moisNom} ${annee}`;
+  const heureTexte = `${heures}:${minutes}`;
+
+  document.getElementById('date-locale').textContent = dateTexte;
+  document.getElementById('heure-locale').textContent = heureTexte;
+}
+
+mettreAJourDateHeure();
+setInterval(mettreAJourDateHeure, 60000);
+
+</script>
+
+</body>
+</html>
