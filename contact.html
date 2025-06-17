@@ -15,7 +15,6 @@
 <script>
   AOS.init();
 </script>
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
 <script type="text/javascript">
   (function(){
     emailjs.init("HrBqCOKlRQHvgT_Qv");
@@ -130,42 +129,29 @@ mettreAJourDateHeure();
 setInterval(mettreAJourDateHeure, 60000);
 
 </script>
-  <script>
-document.getElementById("formulaire").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const honeypot = this.querySelector('input[name="website"]');
-  if (honeypot.value.trim() !== "") {
-    alert("Formulaire détecté comme spam.");
-    return;
-  }
-
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
-
-  console.log("Données du formulaire :", data);
-
-  alert("Merci " + data.nom + ", votre message a été envoyé avec succès !");
-
-  this.reset();
-});
-</script>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  (function(){
-    emailjs.init("HrBqCOKlRQHvgT_Qv");
-  })();
+  emailjs.init("HrBqCOKlRQHvgT_Qv");
 
-  document.getElementById('formulaire').addEventListener('submit', function(event) {
-    event.preventDefault();
+  document.getElementById("formulaire").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Honeypot anti-spam
+    const honeypot = this.querySelector('input[name="website"]');
+    if (honeypot.value.trim() !== "") {
+      alert("Formulaire détecté comme spam.");
+      return;
+    }
 
     emailjs.sendForm('service_gl4mqmu', 'template_pp1wz9s', this)
-      .then(function() {
+      .then(() => {
         alert('Message envoyé avec succès !');
-      }, function(error) {
+        this.reset();
+      }, (error) => {
         alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
       });
   });
 </script>
+
 </body>
 </html>
