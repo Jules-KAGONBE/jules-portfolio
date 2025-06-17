@@ -15,12 +15,6 @@
 <script>
   AOS.init();
 </script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init("HrBqCOKlRQHvgT_Qv");
-  })();
-</script>
-
 
 </head>
 <body>
@@ -91,7 +85,6 @@
       <p>© 2025 Jules PATEHALE KAGONBE - Tous droits réservés</p>
     </footer>
   </div>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     const burger = document.querySelector('.burger');
@@ -130,6 +123,7 @@ setInterval(mettreAJourDateHeure, 60000);
 
 </script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   emailjs.init("HrBqCOKlRQHvgT_Qv");
 
@@ -147,11 +141,14 @@ setInterval(mettreAJourDateHeure, 60000);
       .then(() => {
         alert('Message envoyé avec succès !');
         this.reset();
-      }, (error) => {
-        alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
+      })
+      .catch(error => {
+        alert('Erreur lors de l\'envoi : ' + (error.text || JSON.stringify(error)));
+        console.error('EmailJS error:', error);
       });
   });
 </script>
+
 
 </body>
 </html>
