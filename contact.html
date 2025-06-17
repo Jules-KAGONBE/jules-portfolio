@@ -153,7 +153,7 @@ document.getElementById("formulaire").addEventListener("submit", function(e) {
 </script>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  (function() {
+  (function(){
     emailjs.init("HrBqCOKlRQHvgT_Qv");
   })();
 
@@ -163,13 +163,11 @@ document.getElementById("formulaire").addEventListener("submit", function(e) {
     emailjs.sendForm('service_gl4mqmu', 'template_pp1wz9s', this)
       .then(function() {
         alert('Message envoyé avec succès !');
-        document.getElementById('formulaire').reset();
       }, function(error) {
         alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
       });
   });
 </script>
-
 
 </body>
 </html>
