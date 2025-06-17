@@ -11,13 +11,19 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
-</head>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("HrBqCOKlRQHvgT_Qv");
+  })();
+</script>
 
+
+</head>
 <body>
   <div class="page-container">
     <header>
@@ -33,15 +39,17 @@
         <div class="burger"><div></div><div></div><div></div></div>
       </div>
     </header>
+	
+	<div class="highlight-box">
+    <span id="date-locale" class="date-locale">-- -- --</span>
   
-    <div class="highlight-box">
-      <span id="date-locale" class="date-locale">-- -- --</span>
-      <div class="marquee-wrapper">
-        <span class="marquee-text">
-          Juriste d’affaires & expert droit notarial, je combine expertise juridique et innovation digitale pour faire évoluer vos projets avec agilité et sécurité. Transformons ensemble le droit grâce aux nouvelles technologies !
-        </span>
-      </div>
-      <span id="heure-locale" class="heure-locale">--:--</span>
+    <div class="marquee-wrapper">
+    <span class="marquee-text">
+     Juriste d’affaires & expert droit notarial, je combine expertise juridique et innovation digitale pour faire évoluer vos projets avec agilité et sécurité. Transformons ensemble le droit grâce aux nouvelles technologies !
+    </span>
+    </div>
+  
+    <span id="heure-locale" class="heure-locale">--:--</span>
     </div>
 
     <main class="contact-section">
@@ -63,19 +71,18 @@
         </div>
       </div>
 
-      <form id="formulaire" class="contact-form" >
-        <h3>Formulaire de contact</h3>
-        <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off" />
-        <input type="text" name="nom" placeholder="Votre nom" required />
-        <input type="email" name="email" placeholder="Votre email" required />
-        <input type="tel" name="telephone" placeholder="Téléphone" />
-        <select name="type">
+      <form id="formulaire" class="contact-form" method="POST">
+          <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off" />
+          <input type="text" name="nom" placeholder="Votre nom" required />
+          <input type="email" name="email" placeholder="Votre email" required />
+          <input type="tel" name="telephone" placeholder="Téléphone" />
+          <select name="type">
           <option value="">Choisir le type de rendez-vous</option>
           <option value="en ligne">Rendez-vous en ligne</option>
           <option value="en presentiel">Rendez-vous en présentiel</option>
-        </select>
-        <textarea name="message" placeholder="Votre message / sujet du rendez-vous" rows="5"></textarea>
-        <button type="submit" class="cta-btn">Envoyer</button>
+          </select>
+          <textarea name="message" placeholder="Votre message / sujet du rendez-vous" rows="5"></textarea>
+          <button type="submit" class="cta-btn">Envoyer</button>
       </form>
     </main>
 
@@ -83,46 +90,47 @@
       <p>© 2025 Jules PATEHALE KAGONBE - Tous droits réservés</p>
     </footer>
   </div>
-
-  <!-- Menu responsive -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const burger = document.querySelector('.burger');
-      const navLinks = document.querySelector('.nav-links');
-      burger.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-      });
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
     });
+  });
   </script>
-
-  <!-- Date & heure -->
   <script>
-    function mettreAJourDateHeure() {
-      const maintenant = new Date();
-      const jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-      const mois = ["janvier", "février", "mars", "avril", "mai", "juin",
-                    "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
-      const jourSemaine = jours[maintenant.getDay()];
-      const jour = maintenant.getDate();
-      const moisNom = mois[maintenant.getMonth()];
-      const annee = maintenant.getFullYear();
-      const heures = maintenant.getHours().toString().padStart(2, '0');
-      const minutes = maintenant.getMinutes().toString().padStart(2, '0');
-      document.getElementById('date-locale').textContent = `${jourSemaine} ${jour} ${moisNom} ${annee}`;
-      document.getElementById('heure-locale').textContent = `${heures}:${minutes}`;
-    }
-    mettreAJourDateHeure();
-    setInterval(mettreAJourDateHeure, 60000);
-  </script>
+  function mettreAJourDateHeure() {
+  const maintenant = new Date();
 
-  <!-- EmailJS -->
+  const jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+  const mois = ["janvier", "février", "mars", "avril", "mai", "juin",
+                "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+  const jourSemaine = jours[maintenant.getDay()];
+  const jour = maintenant.getDate();
+  const moisNom = mois[maintenant.getMonth()];
+  const annee = maintenant.getFullYear();
+
+  const heures = maintenant.getHours().toString().padStart(2, '0');
+  const minutes = maintenant.getMinutes().toString().padStart(2, '0');
+
+  const dateTexte = `${jourSemaine} ${jour} ${moisNom} ${annee}`;
+  const heureTexte = `${heures}:${minutes}`;
+
+  document.getElementById('date-locale').textContent = dateTexte;
+  document.getElementById('heure-locale').textContent = heureTexte;
+}
+
+mettreAJourDateHeure();
+setInterval(mettreAJourDateHeure, 60000);
+
+</script>
   <script>
-    (function(){
-  emailjs.init("HrBqCOKlRQHvgT_Qv");
-})();
-
-document.getElementById('formulaire').addEventListener('submit', function(event) {
-  event.preventDefault();
+document.getElementById("formulaire").addEventListener("submit", function(e) {
+  e.preventDefault();
 
   const honeypot = this.querySelector('input[name="website"]');
   if (honeypot.value.trim() !== "") {
@@ -130,17 +138,33 @@ document.getElementById('formulaire').addEventListener('submit', function(event)
     return;
   }
 
-  emailjs.sendForm('service_gl4mqmu', 'template_pp1wz9s', this)
-    .then(function(response) {
-      alert('Message envoyé avec succès !');
-      console.log('EmailJS response:', response);
-      document.getElementById('formulaire').reset();
-    }, function(error) {
-      alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
-      console.error('EmailJS error:', error);
-    });
-});
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
 
-  </script>
+  console.log("Données du formulaire :", data);
+
+  alert("Merci " + data.nom + ", votre message a été envoyé avec succès !");
+
+  this.reset();
+});
+</script>
+<script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("HrBqCOKlRQHvgT_Qv");
+  })();
+
+  document.getElementById('formulaire').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_gl4mqmu', 'template_pp1wz9s', this)
+      .then(function() {
+        alert('Message envoyé avec succès !');
+      }, function(error) {
+        alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
+      });
+  });
+</script>
+
 </body>
 </html>
