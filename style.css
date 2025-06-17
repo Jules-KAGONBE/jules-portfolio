@@ -968,12 +968,14 @@ footer {
   }
 }
 
-
+/* ===============================
+   NOTIFICATION ET CONFIRMATION
+================================== */
 .notification {
   position: fixed;
   bottom: 30px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(20px);
   min-width: 280px;
   max-width: 90vw;
   padding: 15px 25px;
@@ -986,18 +988,25 @@ footer {
   pointer-events: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
   z-index: 9999;
+  display: none;
 }
 
 .notification.show {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+  display: block;
 }
 
 .notification.success {
-  background-color: #28a745;
+  background-color: #28a745; 
 }
 
 .notification.error {
   background-color: #dc3545;
 }
+
+.notification.hidden {
+  display: none;
+}
+

@@ -117,35 +117,38 @@
 
   <!-- EmailJS -->
   <script>
-    function showNotification(message, type = 'success') {
-  const notif = document.getElementById('notification');
-  notif.textContent = message;
-  notif.className = 'notification show ' + type;
+  function showNotification(message, type = 'success') {
+    const notif = document.getElementById('notification');
+    notif.textContent = message;
+    notif.className = 'notification show ' + type;
+    notif.style.display = 'block';
 
-  setTimeout(() => {
-    notif.className = 'notification hidden';
-  }, 4000);
-}
-
-document.getElementById('formulaire').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const honeypot = this.querySelector('input[name="website"]');
-  if (honeypot.value.trim() !== "") {
-    showNotification("Formulaire détecté comme spam.", "error");
-    return;
+    // Après 4 secondes, cache la notification
+    setTimeout(() => {
+      notif.className = 'notification hidden';
+      notif.style.display = 'none';
+    }, 4000);
   }
 
-  emailjs.sendForm('service_gl4mqmu', 'template_pp1wz9s', this)
-    .then(function() {
-      showNotification('Message envoyé avec succès !', 'success');
-      document.getElementById('formulaire').reset();
-    }, function(error) {
-      showNotification('Erreur lors de l\'envoi : ' + error.text, 'error');
-    });
-});
+  document.getElementById('formulaire').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-  </script>
+    const honeypot = this.querySelector('input[name="website"]');
+    if (honeypot.value.trim() !== "") {
+      showNotification("Formulaire détecté comme spam.", "error");
+      return;
+    }
+
+    emailjs.sendForm('service_gl4mqmu', 'template_pp1wz9s', this)
+      .then(function() {
+        showNotification('Message envoyé avec succès !', 'success');
+        document.getElementById('formulaire').reset();
+      }, function(error) {
+        showNotification('Erreur lors de l\'envoi : ' + error.text, 'error');
+      });
+  });
+</script>
+
   <div id="notification" class="notification hidden"></div>
 </body>
 </html>
