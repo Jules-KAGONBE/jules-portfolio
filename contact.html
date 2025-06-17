@@ -74,6 +74,7 @@
       <form id="formulaire" class="contact-form" method="POST" action="#">
           <h3>Formulaire de contact</h3>
           <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+		  <input type="hidden" name="to_email" value="jules.legis@gmail.com">
           <input type="text" name="nom" placeholder="Votre nom" required />
           <input type="email" name="email" placeholder="Votre email" required />
           <input type="tel" name="telephone" placeholder="Téléphone" />
@@ -132,32 +133,27 @@ setInterval(mettreAJourDateHeure, 60000);
 </script>
   <script>
 document.getElementById("formulaire").addEventListener("submit", function(e) {
-  e.preventDefault(); // Empêche l'envoi classique
+  e.preventDefault();
 
-  // Anti-spam (champ caché type honeypot)
   const honeypot = this.querySelector('input[name="website"]');
   if (honeypot.value.trim() !== "") {
     alert("Formulaire détecté comme spam.");
     return;
   }
 
-  // Récupération des données du formulaire
   const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
 
-  // Affiche les données dans la console (pour test)
   console.log("Données du formulaire :", data);
 
-  // Message de confirmation
   alert("Merci " + data.nom + ", votre message a été envoyé avec succès !");
 
-  // Réinitialise le formulaire
   this.reset();
 });
 </script>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  (function(){
+  (function() {
     emailjs.init("HrBqCOKlRQHvgT_Qv");
   })();
 
@@ -167,11 +163,13 @@ document.getElementById("formulaire").addEventListener("submit", function(e) {
     emailjs.sendForm('service_gl4mqmu', 'template_pp1wz9s', this)
       .then(function() {
         alert('Message envoyé avec succès !');
+        document.getElementById('formulaire').reset();
       }, function(error) {
         alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
       });
   });
 </script>
+
 
 </body>
 </html>
